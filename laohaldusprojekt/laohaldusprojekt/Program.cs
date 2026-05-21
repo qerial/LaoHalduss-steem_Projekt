@@ -1,3 +1,6 @@
+using laohaldusprojekt.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace laohaldusprojekt
 {
     public class Program
@@ -8,7 +11,8 @@ namespace laohaldusprojekt
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-
+            builder.Services.AddDbContext<LaohaldusContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("LaohaldusContext")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -31,6 +35,8 @@ namespace laohaldusprojekt
                 .WithStaticAssets();
 
             app.Run();
+
+            
         }
     }
 }
