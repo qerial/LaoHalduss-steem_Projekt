@@ -1,0 +1,41 @@
+﻿@model IEnumerable<laohaldusprojekt.ViewModel.ProductIndexViewModel>
+
+@{
+    ViewData["Title"] = "Tooted";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nimi</th>
+            <th>Kogus</th>
+            <th>Hind</th>
+            <th>Kategooria</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.TooteNimi)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Kogus)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Hind)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Kategooria)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
