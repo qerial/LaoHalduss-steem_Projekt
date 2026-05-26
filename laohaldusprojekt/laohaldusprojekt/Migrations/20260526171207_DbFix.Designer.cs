@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using laohaldusprojekt.Data;
 
@@ -10,9 +11,11 @@ using laohaldusprojekt.Data;
 namespace laohaldusprojekt.Migrations
 {
     [DbContext(typeof(LaohaldusContext))]
-    partial class LaohaldusContextModelSnapshot : ModelSnapshot
+    [Migration("20260526171207_DbFix")]
+    partial class DbFix
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

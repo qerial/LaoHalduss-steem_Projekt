@@ -7,7 +7,7 @@ namespace laohaldusprojekt.Data
     {
         public LaohaldusContext(DbContextOptions<LaohaldusContext> options) : base(options)
         { }
-        public DbSet<Product> Students { get; set; }
+        public DbSet<Product> Products { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
