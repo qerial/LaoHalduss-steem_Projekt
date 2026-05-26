@@ -18,7 +18,7 @@ namespace laohaldusprojekt.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TooteNimi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Kogus = table.Column<int>(type: "int", nullable: false),
-                    Hind = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Hind = table.Column<double>(type: "float", nullable: false),
                     Kategooria = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

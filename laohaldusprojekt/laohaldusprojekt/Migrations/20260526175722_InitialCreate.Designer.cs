@@ -11,8 +11,8 @@ using laohaldusprojekt.Data;
 namespace laohaldusprojekt.Migrations
 {
     [DbContext(typeof(LaohaldusContext))]
-    [Migration("20260526171207_DbFix")]
-    partial class DbFix
+    [Migration("20260526175722_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
