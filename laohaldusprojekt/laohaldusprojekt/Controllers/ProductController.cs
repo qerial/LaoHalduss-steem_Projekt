@@ -29,6 +29,12 @@ namespace laohaldusprojekt.Controllers
 
             return View(model);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(ProductCreateViewModel vm)
         {
             if (ModelState.IsValid)
