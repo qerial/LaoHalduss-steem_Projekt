@@ -1,0 +1,52 @@
+﻿@model laohaldusprojekt.ViewModel.ProductDeleteViewModel
+
+@{
+    ViewData["Title"] = "Toote Kustutamine";
+}
+
+<h2>Toote Kustutamine</h2>
+<div>
+    <h4>Toote Detailid</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TooteNimi)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TooteNimi)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kogus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kogus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Hind)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Hind)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kategooria)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kategooria)
+        </dd>
+        <dd class="col-sm-10">
+            <table class="table">
+            </table>
+        </dd>
+    </dl>
+</div>
+<form asp-action="DeletePost">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Delete" />
+    <a asp-action="Index">Tagasi toodetesse</a>
+</form>
