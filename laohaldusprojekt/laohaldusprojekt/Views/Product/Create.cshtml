@@ -1,0 +1,36 @@
+﻿@model laohaldusprojekt.ViewModel.ProductCreateViewModel
+
+
+@{
+    ViewData["Title"] = "Lisa toode";
+}
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="TooteNimi" class="control-label"></label>
+        <input asp-for="TooteNimi" class="form-control"/>
+        <span asp-validation-for="TooteNimi" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Kogus" class="control-label"></label>
+        <input asp-for="Kogus" class="form-control"/>
+        <span asp-validation-for="Kogus" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Hind" class="control-label"></label>
+        <input asp-for="Hind" class="form-control"/>
+        <span asp-validation-for="Hind" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Kategooria" class="control-label"></label>
+        <input asp-for="Kategooria" class="form-control"/>
+        <span asp-validation-for="Kategooria" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary" />
+    </div>
+</form>
+<div>
+    <a asp-action="Index">Tagasi toodetesse</a>
+</div>

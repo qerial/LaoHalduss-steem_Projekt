@@ -29,5 +29,26 @@ namespace laohaldusprojekt.Controllers
 
             return View(model);
         }
+        public async Task<IActionResult> Create(ProductCreateViewModel vm)
+        {
+            if (ModelState.IsValid)
+            {
+                var product = new Models.Product
+                {
+                    TooteNimi = vm.TooteNimi,
+                    Kogus = vm.Kogus,
+                    Hind = vm.Hind,
+                    Kategooria = vm.Kategooria
+                };
+                _context.Add(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(vm);
+        }
+
+       
+        
+
     }
 }
