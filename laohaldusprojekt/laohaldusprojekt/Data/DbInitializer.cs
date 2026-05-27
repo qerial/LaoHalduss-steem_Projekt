@@ -19,6 +19,7 @@ namespace laohaldusprojekt.Data
             );
 
             context.SaveChanges();
+
         }
     }
 }
