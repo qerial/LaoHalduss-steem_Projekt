@@ -3,6 +3,17 @@
 @{
     ViewData["Title"] = "Tooted";
 }
+<h2>Products</h2>
+
+<p>
+    <a asp-action="Create">Add New</a>
+</p>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+    </div>
+</form>
+<hr />
 
 <table>
     <thead>
@@ -33,9 +44,15 @@
                 <td>
                     @Html.DisplayFor(model => item.Kategooria)
                 </td>
+                <td>
+                    <a asp-action="Update" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+
 
 
