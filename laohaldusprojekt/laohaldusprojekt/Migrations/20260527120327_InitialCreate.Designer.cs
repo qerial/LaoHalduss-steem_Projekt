@@ -11,7 +11,7 @@ using laohaldusprojekt.Data;
 namespace laohaldusprojekt.Migrations
 {
     [DbContext(typeof(LaohaldusContext))]
-    [Migration("20260526175722_InitialCreate")]
+    [Migration("20260527120327_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -49,6 +49,32 @@ namespace laohaldusprojekt.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Product", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Hind = 3.5499999999999998,
+                            Kategooria = "Liha- ja kalatooted",
+                            Kogus = 4,
+                            TooteNimi = "Lihapihvid, MAKS&MOORITS"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Hind = 5.0,
+                            Kategooria = "Liha- ja kalatooted",
+                            Kogus = 2,
+                            TooteNimi = "Kodune šašlõkk"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Hind = 3.1899999999999999,
+                            Kategooria = "Piimatooted",
+                            Kogus = 5,
+                            TooteNimi = "Juustupulgad Pik-Nik"
+                        });
                 });
 #pragma warning restore 612, 618
         }

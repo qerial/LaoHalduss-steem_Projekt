@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace laohaldusprojekt.Migrations
 {
     /// <inheritdoc />
@@ -24,6 +26,16 @@ namespace laohaldusprojekt.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Product", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Product",
+                columns: new[] { "Id", "Hind", "Kategooria", "Kogus", "TooteNimi" },
+                values: new object[,]
+                {
+                    { 1, 3.5499999999999998, "Liha- ja kalatooted", 4, "Lihapihvid, MAKS&MOORITS" },
+                    { 2, 5.0, "Liha- ja kalatooted", 2, "Kodune šašlõkk" },
+                    { 3, 3.1899999999999999, "Piimatooted", 5, "Juustupulgad Pik-Nik" }
                 });
         }
 
