@@ -11,7 +11,7 @@ using laohaldusprojekt.Data;
 namespace laohaldusprojekt.Migrations
 {
     [DbContext(typeof(LaohaldusContext))]
-    [Migration("20260527164920_InitialCreate")]
+    [Migration("20260528125755_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

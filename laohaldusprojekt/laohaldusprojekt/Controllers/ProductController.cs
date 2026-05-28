@@ -82,9 +82,6 @@ namespace laohaldusprojekt.Controllers
                 {
                     Id = id,
                 };
-                //teine variant
-                //var delete = await _context.Students
-                //    .FirstOrDefaultAsync(x => x.Id == id);
 
                 _context.Products.Remove(delete);
                 await _context.SaveChangesAsync();
