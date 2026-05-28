@@ -92,12 +92,62 @@ namespace laohaldusprojekt.Controllers
                 return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
                 throw;
             }
-
             return RedirectToAction(nameof(Delete));
         }
+        [HttpGet]
 
-
-
-
+        public async Task<IActionResult> Update(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            var model = new ProductUpdateViewModel
+            {
+                Id = product.Id,
+                TooteNimi = product.TooteNimi,
+                Kogus = product.Kogus,
+                Hind = product.Hind,
+                Kategooria = product.Kategooria
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(ProductUpdateViewModel vm)
+        {
+            if (ModelState.IsValid)
+            {
+                var product = new Product
+                {
+                    Id = vm.Id,
+                    TooteNimi = vm.TooteNimi,
+                    Kogus = vm.Kogus,
+                    Hind = vm.Hind,
+                    Kategooria = vm.Kategooria
+                };
+                _context.Update(product);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(vm);
+        }
+        public async Task<IActionResult> Details(int id)
+        {
+            var product = await _context.Products.FindAsync(id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            var model = new ProductDetailsViewModel
+            {
+                Id = product.Id,
+                TooteNimi = product.TooteNimi,
+                Kogus = product.Kogus,
+                Hind = product.Hind,
+                Kategooria = product.Kategooria
+            };
+            return View(model);
+        }
     }
 }

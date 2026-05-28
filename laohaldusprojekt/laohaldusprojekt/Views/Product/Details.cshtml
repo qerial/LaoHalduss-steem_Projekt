@@ -1,12 +1,10 @@
-﻿@model laohaldusprojekt.ViewModel.ProductDeleteViewModel
+﻿@model laohaldusprojekt.ViewModel.ProductDetailsViewModel
 
 @{
-    ViewData["Title"] = "Toote Kustutamine";
+    ViewData["Title"] = "Toote Detailid:";
 }
-
-<h2>Toote Kustutamine</h2>
+<h1>@ViewData["Title"]</h1>
 <div>
-    <h4>Toote Detailid:</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -45,8 +43,6 @@
         </dd>
     </dl>
 </div>
-<form asp-action="DeletePost">
-    <input type="hidden" asp-for="Id" />
-    <input type="submit" value="Delete" />
-    <a asp-action="Index">Tagasi toodetesse</a>
-</form>
+<div>
+    <a asp-action="Index">back to List</a>
+</div>
